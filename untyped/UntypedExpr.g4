@@ -1,4 +1,4 @@
-grammar UntypedArithmeticExpressions;
+grammar UntypedExpr;
 
 TRUE: 'true';
 FALSE: 'false';
@@ -13,11 +13,9 @@ LPAREN: '(';
 RPAREN: ')';
 WS: [ \t\n\r\f]+ -> skip;
 
-prog: term;
-
 term:
-	FALSE							# constTrue
-	| TRUE							# constFalse
+	FALSE							# constFalse
+	| TRUE							# constTrue
 	| ZERO							# constZero
 	| IF term THEN term ELSE term	# if
 	| SUCC term						# succ
