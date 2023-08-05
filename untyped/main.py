@@ -17,4 +17,5 @@ def main(input_content):
 
 
 if __name__ == "__main__":
-    main("if 0 then 0 else 0")
+    main("if false then 0 else (succ 0)")
+    main("iszero (pred (succ 0))")

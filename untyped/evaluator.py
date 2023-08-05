@@ -12,11 +12,11 @@ def eval(ast):
             return eval(ast.elseBranch)
     else:
         current_value = eval(ast.value)
-        if ast.FuncKind == AST.FuncKind.SUCC:
+        if ast.kind == FuncKind.SUCC:
             return current_value + 1
-        elif ast.FuncKind == AST.FuncKind.PRED:
+        elif ast.kind == FuncKind.PRED:
             return current_value - 1
-        elif ast.FuncKind == AST.FuncKind.PAREN:
+        elif ast.kind == FuncKind.PAREN:
             return current_value
         else:
             return current_value == 0

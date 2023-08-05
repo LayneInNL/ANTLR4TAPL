@@ -52,16 +52,16 @@ class NodeVisitor(UntypedExprVisitor):
 
     def visitSucc(self, ctx):
         result = self.visit(ctx.term())
-        return FuncTerm(FuncKind.SUCC, result[1])
+        return FuncTerm(FuncKind.SUCC, result)
 
     def visitPred(self, ctx):
         result = self.visit(ctx.term())
-        return FuncTerm(FuncKind.Pred, result[1])
+        return FuncTerm(FuncKind.PRED, result)
 
     def visitIsZero(self, ctx):
         result = self.visit(ctx.term())
-        return FuncTerm(FuncKind.ISZERO, result[1])
+        return FuncTerm(FuncKind.ISZERO, result)
 
     def visitParen(self, ctx):
         result = self.visit(ctx.term())
-        return FuncTerm(FuncKind.PAREN, result[1])
+        return FuncTerm(FuncKind.PAREN, result)
